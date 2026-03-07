@@ -1,0 +1,15 @@
+# Visual Studio Junk
+.vs/
+bin/
+obj/
+Debug/
+Release/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.csproj
+*.user
+*.suo
+*.exe
+*.slnx
+*.txt
