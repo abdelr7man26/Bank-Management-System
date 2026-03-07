@@ -155,12 +155,10 @@ the system concidered the security of data by :
 
 ## 📂 Project Structure
 
-Bank-Management-System
+### Bank-Management-System
 │
 ├── Banking_System_Client
-│   ├── GUI source files
 │   ├── Client application logic
-│   └── Network request handling
 │
 ├── Banking_System_Server
 │   ├── Server implementation
@@ -169,10 +167,11 @@ Bank-Management-System
 │   └── Data handling
 │
 ├── Database
-│   ├── DataBase.json
-│   └── Login.json
-│
-├── send_email1.py
+│   ├── USers.txt
+│   └── Clients.txt
+│   └── Loginhistory.txt
+│   └── transactionshistory.txt
+│   └── Currancies.txt
 │
 └── README.md
 
