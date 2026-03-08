@@ -46,7 +46,7 @@ public:
     static void ShowTransferScreen()
     {
 
-        _DrawScreenHeader("\Transfer Screen");
+        _DrawScreenHeader("\tTransfer Screen");
 
         string senderaccountNumber = clsInputValidate::readString("\nPlease Enter account Number to transfer from: ");
         clsBankClient Client1 = _FindClient(senderaccountNumber);

@@ -43,9 +43,10 @@ public:
         _DrawScreenHeader("\t  Find Currency Screen");
 
         cout << "\nFind By: [1] Code or [2] Country ? ";
-        short Answer = 1;
+        short Answer;
 
         cin >> Answer;
+        cin.ignore();
 
         if (Answer == 1)
         {

@@ -53,24 +53,26 @@ private:
 
         _PrintCurrencyCard(Currency1, "Convert From:");
 
+        _PrintCurrencyCard(Currency2, "Convert To:");
+
         float AmountInUSD = Currency1.ConvertToUSD(Amount);
 
-        cout << Amount << " " << Currency1.currencyCode()
-            << " = " << AmountInUSD << " USD\n";
+        cout << "\nConverting from " << Currency1.currencyCode() << " to " << Currency2.currencyCode() << "\t ";
+
+        
 
         if (Currency2.currencyCode() == "USD")
         {
+            cout << Amount << " " << Currency1.currencyCode()
+                << " = " << AmountInUSD << " " << Currency2.currencyCode();
             return;
         }
-
-        cout << "\nConverting from USD to:\n";
-
-        _PrintCurrencyCard(Currency2, "To:");
-
-        float AmountInCurrrency2 = Currency1.ConvertToOtherCurrency(Amount, Currency2);
-
-        cout << Amount << " " << Currency1.currencyCode()
-            << " = " << AmountInCurrrency2 << " " << Currency2.currencyCode();
+        else {
+            float AmountInCurrrency2 = Currency1.ConvertToOtherCurrency(Amount, Currency2);
+            cout << Amount << " " << Currency1.currencyCode()
+                << " = " << AmountInCurrrency2 << " " << Currency2.currencyCode();
+        }
+  
 
     }
 
@@ -85,17 +87,17 @@ public:
         {
             system("cls");
 
-            _DrawScreenHeader("\tUpdate Currency Screen");
+            _DrawScreenHeader("\tCurrancy Calculator Screen");
 
-            clsCurrency CurrencyFrom = _GetCurrency("\nPlease Enter Currency1 Code: ");
-            clsCurrency CurrencyTo = _GetCurrency("\nPlease Enter Currency2 Code: ");
+            clsCurrency CurrencyFrom = _GetCurrency("\nPlease Enter Currency Code to convert from it: ");
+            clsCurrency CurrencyTo = _GetCurrency("\nPlease Enter Currency Code to convert to it: ");
             float Amount = _ReadAmount();
 
             _PrintCalculationsResults(Amount, CurrencyFrom, CurrencyTo);
 
             cout << "\n\nDo you want to perform another calculation? y/n ? ";
             cin >> Continue;
-
+            cin.ignore();
         }
 
 

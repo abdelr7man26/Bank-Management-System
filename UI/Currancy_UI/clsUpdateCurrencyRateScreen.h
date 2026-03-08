@@ -51,8 +51,9 @@ public:
 
         cout << "\nAre you sure you want to update the rate of this Currency y/n? ";
 
-        char Answer = 'n';
+        char Answer ;
         cin >> Answer;
+        cin.ignore();
 
         if (Answer == 'y' || Answer == 'Y')
         {

@@ -31,7 +31,7 @@ private:
 		attributes += currency.country() + seperator;
 		attributes += currency.currencyCode() + seperator;
 		attributes += currency.currencyName() + seperator;
-		attributes += to_string(currency.rate()) + seperator;
+		attributes += to_string(currency.rate());
 
 		return attributes;
 	}
@@ -39,7 +39,7 @@ private:
 	static void _saveToFile(vector <clsCurrency> currencies ) {
 
 		fstream file;
-		file.open("Currencies.txt", ios::out);
+		file.open("Database/Currencies.txt", ios::out);
 		string line;
 		if (file.is_open()) {
 			for (clsCurrency& currency : currencies)
@@ -56,7 +56,7 @@ private:
 		vector <clsCurrency> currencies;
 
 		fstream file;
-		file.open("Currencies.txt", ios::in);
+		file.open("Database/Currencies.txt", ios::in);
 
 		if (file.is_open()) {
 			string line;

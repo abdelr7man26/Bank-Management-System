@@ -29,6 +29,8 @@ public:
         if (!checkpermission(clsBankUser::enPermissions::pDeleteClient)) {
             return;
         }
+        _DrawScreenHeader("\tDelete Client Screen");
+
         string accountNumber = clsInputValidate::readString("enter account number to delete\n");
         while (!(clsBankClient::isCLientExist(accountNumber))) {
             accountNumber = clsInputValidate::readString("account doesnt exist already. enter a valid account number to delete\n");

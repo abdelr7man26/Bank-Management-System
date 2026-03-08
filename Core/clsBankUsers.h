@@ -46,7 +46,7 @@ private:
         vector <clsBankUser> vUsers;
 
         fstream file;
-        file.open("Users.txt", ios::in);
+        file.open("Database/Users.txt", ios::in);
 
         if (file.is_open()) {
             string line;
@@ -65,7 +65,7 @@ private:
 
     static void _saveToFile( vector <clsBankUser> vUsers) {
         fstream file;
-        file.open("Users.txt", ios::out);
+        file.open("Database/Users.txt", ios::out);
 
         string attributesline;
 
@@ -82,9 +82,9 @@ private:
         }
     }
 
-    static void _saveOneClientToFile( clsBankUser User) {
+    static void _saveOneUserToFile( clsBankUser User) {
         fstream file;
-        file.open("Users.txt", ios::out | ios::app);
+        file.open("Database/Users.txt", ios::out | ios::app);
 
         string attributesline;
 
@@ -141,7 +141,7 @@ private:
 
     void _addNew() {
      
-        _saveOneClientToFile(*this);
+        _saveOneUserToFile(*this);
 
     }
 
@@ -307,7 +307,7 @@ public:
     
     void _saveLogHistoryToFile() {
         fstream file;
-        file.open("Log.txt", ios::out | ios::app);
+        file.open("Database/Log.txt", ios::out | ios::app);
 
         string attributesline;
 
@@ -325,7 +325,7 @@ public:
         vector <vector<string>> vUsers;
 
         fstream file;
-        file.open("Log.txt", ios::in);
+        file.open("Database/Log.txt", ios::in);
 
         if (file.is_open()) {
             string line;

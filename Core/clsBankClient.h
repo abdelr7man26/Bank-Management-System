@@ -111,7 +111,7 @@ private:
 
     static void _saveTransferHistoryToFile(clsBankClient Sender ,int amount , clsBankClient Reciver) {
         fstream file;
-        file.open("Transfer Log.txt", ios::out);
+        file.open("Database/Transfer Log.txt", ios::out);
 
         string attributesline;
 
@@ -137,7 +137,7 @@ private:
         vector <vector<string>> vattributes;
 
         fstream file;
-        file.open("Transfer Log.txt", ios::in);
+        file.open("Database/Transfer Log.txt", ios::in);
 
         if (file.is_open()) {
             string line;
@@ -162,7 +162,7 @@ private:
     void _Update()
     {
         vector <clsBankClient> _vClients;
-        _vClients = _fillFromFile("clients.txt");
+        _vClients = _fillFromFile("Database/clients.txt");
 
         for (clsBankClient& C : _vClients)
         {
@@ -174,10 +174,10 @@ private:
 
         }
 
-        _saveToFile("clients.txt", _vClients);
+        _saveToFile("Database/clients.txt", _vClients);
 
     }
-
+    
     void _addNew() {
        /* vector <clsBankClient> _vClients;
         _vClients = _fillFromFile("");
@@ -186,7 +186,7 @@ private:
         */
 
 
-        _saveOneClientToFile("clients.txt", *this);
+        _saveOneClientToFile("Database/clients.txt", *this);
        
     }
     
@@ -236,7 +236,7 @@ public :
 
 
     static clsBankClient find(string accountNumber) {
-        vector <clsBankClient> clients = _fillFromFile("clients.txt");
+        vector <clsBankClient> clients = _fillFromFile("Database/clients.txt");
         for (clsBankClient& client : clients) {
             if (client.AccountNumber() == accountNumber) {
                 return client;
@@ -246,7 +246,7 @@ public :
     }
 
     static clsBankClient find(string accountNumber , string pinCode) {
-        vector <clsBankClient> clients = _fillFromFile("");
+        vector <clsBankClient> clients = _fillFromFile("Database/clients.txt");
         for (clsBankClient& client : clients) {
             if (client.AccountNumber() == accountNumber && client.pinCode == pinCode) {
                 return client;
@@ -309,7 +309,7 @@ public :
 
     static vector <clsBankClient> clientsList()
     {
-        return _fillFromFile("clients.txt");
+        return _fillFromFile("Database/clients.txt");
     }
 
     static float GetTotalBalances()
