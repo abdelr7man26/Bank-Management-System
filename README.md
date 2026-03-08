@@ -1,6 +1,6 @@
 # 🏦 Bank Management System
 
-A Bank Management System that simulates basic banking operations such as account management, authentication, and financial transactions.
+A Bank Management System that simulates basic banking operations such as account management, authentication, financial transactions, and currancy exhange.
 The system follows a Client–Server architecture where a graphical client application communicates with a server responsible for processing requests and managing stored data.
 
 This project demonstrates practical concepts in:
